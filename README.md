@@ -15,10 +15,10 @@
 
 | Nome completo | Usuário GitHub | Questão do seminário |
 |---|---|---|
-| <!-- Nome --> | [@usuario](https://github.com/usuario) | <!-- nº da questão --> |
-| <!-- Nome --> | [@usuario](https://github.com/usuario) | <!-- nº da questão --> |
-| <!-- Nome --> | [@usuario](https://github.com/usuario) | <!-- nº da questão --> |
-| <!-- Nome --> | [@usuario](https://github.com/usuario) | <!-- nº da questão --> |
+| <!-- Luiz Fernando --> | [@PatoDesoxigenado](https://github.com/usuario) | <!-- nº da questão --> |
+| <!-- Ana Kelry --> | [@kelryana](https://github.com/usuario) | <!-- nº da questão --> |
+| <!-- Alerrandro Martins --> | [@Alerrandr0z0](https://github.com/usuario) | <!-- nº da questão --> |
+| <!-- Thafine Jennifer --> | [@thafine](https://github.com/usuario) | <!-- nº da questão --> |
 
 > A coluna "Questão do seminário" será preenchida após a atribuição pelo professor, uma semana antes da entrega.
 
