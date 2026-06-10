@@ -96,8 +96,7 @@ Discuta:
 * qualidade da política heurística;
 * diferença entre racionalidade e optimalidade.
 
-> **Resposta:**
-
+> **Resposta:** Ele é considerado sim, mas no campo da racionalidade limitada, já que ele não é exatamente limitado no que ele consegue perceber, pois assim como é dito ele consegue observar todas as informações disponíveis para ele, mas dada sua natureza aleatória e de constante esforço de minimizar continuamente o erro, ele é sim racional ao se utilizar de toda informação disponível para chegar no resultado satisfatório, contanto que a solução seja achada, ele para ao invés de procurar exaustivamente a perfeição evitando assim uma explosão combinatória que pode ocorrer.
 ---
 
 ## 2. Este exercício utiliza IA simbólica, conexionista ou híbrida?
@@ -108,7 +107,7 @@ Explique:
 * quais paradigmas alternativos poderiam resolver o problema;
 * vantagens e limitações de cada abordagem.
 
-> **Resposta:**
+> **Resposta:** O paradigma usado é o da IA Simbólica (conhecida como clássica também), que é justificado pelo conhecimento ser explícito por estados claros e as ações são bem definidas para transitar entre os estados. E um paradigma alternativo que poderia ser utilizado é o Conexionista, que trata das redes neurais, que seja por Machine Learning em que ele teria a bagagem de várias cestas diferentes, para que a saíde fosse a cesta já certa, ou por Aprendizado por Reforço, em que ele iria por tentativa e erro ir aprendendo por meio de recompensas ou penalidades. Dentre as vantagens, para o simbólico é a clara parte de auditabilidade e rastreabilidade (XAI), e é eficiente computacionalmente, já a Conexionista permitiria que assim que tudo estivesse treinado, as respostas viriam quase que instantaneamente, até mesmo para grandes bases. No que diz respeito à limitações, a Simbólica viria com a chance de ocorrer uma explosão de explosões combinatória, já para o Conexiosta, além de um desperdício de recursos para casos pequenos, praticamente não existe auditabilidade.
 
 ---
 
