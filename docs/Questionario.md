@@ -107,7 +107,7 @@ Explique:
 * quais paradigmas alternativos poderiam resolver o problema;
 * vantagens e limitações de cada abordagem.
 
-> **Resposta:** O paradigma usado é o da IA Simbólica (conhecida como clássica também), que é justificado pelo conhecimento ser explícito por estados claros e as ações são bem definidas para transitar entre os estados. E um paradigma alternativo que poderia ser utilizado é o Conexionista, que trata das redes neurais, que seja por Machine Learning em que ele teria a bagagem de várias cestas diferentes, para que a saíde fosse a cesta já certa, ou por Aprendizado por Reforço, em que ele iria por tentativa e erro ir aprendendo por meio de recompensas ou penalidades. Dentre as vantagens, para o simbólico é a clara parte de auditabilidade e rastreabilidade (XAI), e é eficiente computacionalmente, já a Conexionista permitiria que assim que tudo estivesse treinado, as respostas viriam quase que instantaneamente, até mesmo para grandes bases. No que diz respeito à limitações, a Simbólica viria com a chance de ocorrer uma explosão de explosões combinatória, já para o Conexiosta, além de um desperdício de recursos para casos pequenos, praticamente não existe auditabilidade.
+> **Resposta:** O paradigma usado é o da IA Simbólica (conhecida como clássica também), que é justificado pelo conhecimento ser explícito por estados claros e as ações são bem definidas para transitar entre os estados. E um paradigma alternativo que poderia ser utilizado é o Conexionista, que trata das redes neurais, que seja por Machine Learning em que ele teria a bagagem de várias cestas diferentes, para que a saíde fosse a cesta já certa, ou por Aprendizado por Reforço, em que ele iria por tentativa e erro ir aprendendo por meio de recompensas ou penalidades. Dentre as vantagens, para o simbólico é a clara parte de auditabilidade e rastreabilidade (XAI), e é eficiente computacionalmente, já a Conexionista permitiria que assim que tudo estivesse treinado, as respostas viriam quase que instantaneamente, até mesmo para grandes bases. No que diz respeito à limitações, a Simbólica viria com a chance de ocorrer uma explosão combinatória, já para o Conexionista, além de um desperdício de recursos para casos pequenos, praticamente não existe auditabilidade.
 
 ---
 
@@ -125,7 +125,7 @@ Discuta especificamente:
 * responsabilidade algorítmica;
 * governança de IA.
 
-> **Resposta:**
+> **Resposta:** A XAI é basicamente um conjunto de boas práticas que garantem a transparência e interpretabilidade, aos quais nos permitem ter noção dos caminhos que as IAs passam antes de dar uma saída, em que podemos explicar exatamente o como e o porque do que aconteceu, e é o completo oposto do conceito de um sistema caixa-preta, ao qual não temos como saber de forma alguma todo o processo de 'pensamento', até mesmo as pessoas que o desenvolveram tem uma solução para isso, é o caso para agentes vindos de Machine Learning. É importante para toda esse registro a existência dos logs, pois cada passo do histórico fica salvo e não se perde, ser capaz de rastrezar suas decisões é uma das condições mais importantes para fazermos com que o produto de diversas empresas tenha sua devida responsabilidade ética, sabendo exatamente onde erraram e possam ser devidamente responsabilizadas por isso. O novo marco regulatório com foco na IA vai trazer justamente isso em pauta, para fazer que o desenvolvimento e uso dos agentes seja ético, seguro, e da melhor forma possível ser explicado.
 
 ---
 
@@ -140,7 +140,7 @@ Discuta:
 * reprodutibilidade;
 * possíveis lacunas do log atual.
 
-> **Resposta:**
+> **Resposta:** Não é o suficiente para ser considera completa por conta de sua natureza aleatória, e sem ter o que gerou salvo de alguma forma, não há como qualquer um que esteja vendo o log reproduzir aquele resultado facilmente, mesmo que ele consiga garantir uma alta observabilidade e rastreabilidade, isso não é um problema por si só, a questão de 'como' chegar no resultado é o que realmente faz decair para uma auditoria algorítima incompleta, por conta dele deixar claro 'o que' aconteceu, mas não 'como'.
 
 ---
 
