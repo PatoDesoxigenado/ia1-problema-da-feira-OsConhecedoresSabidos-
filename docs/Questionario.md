@@ -155,7 +155,7 @@ Exemplifique cenários onde:
 
 Discuta impactos sobre modelagem, heurística e arquitetura do agente.
 
-> **Resposta:**
+> **Resposta:** Para esse tipo de situação, a arquitetura do agente guardaria de alguma forma em memória as informações assim que elas fossem descobertas, para tirar ele do 'escuro' de não saber certas informações, sejam os produtos em si ou os preços, e ele não teria mais certeza dos estados, e sim seriam mais como 'possibilidades'. No que diz respeito à situação de preços mudarem dinamicamente ele precisaria agir rápido para chegar até o final, para a chance do preço se manter de acordo com uma saída satisfatória dele. Em caso de ser não determinístico ele teria que constantemente checar umas 2 vezes ao menos cada ação que ele fizesse, para ter certeza que ocorreu da forma que ele ordenou que fosse. Mas no geral, além de ter que considerar ter que colocar em memória, ele teria que ser também um agente baseado em utilidade, para que qualquer risco ou caminho bom seja realmente colocado em ponderação.
 
 ---
 
@@ -170,7 +170,7 @@ Discuta:
 
 Relacione com NP-completude, complexidade computacional e otimização combinatória.
 
-> **Resposta:**
+> **Resposta:** A explosão combinatória ocorre por vários motivos em conjunto, o fator da ramificação se dá pelo fato de que o tanto de N possibilidades que ele pode seguir, é o tanto de itens diferentes disponíveis para ele poder fazer alguma ação na cesta, e levando em conta a profundidade que pode levar para alcançar o objetivo (seja por tamanho, ou nesse caso o preço), chegamos em um crescimento exponencial, pois o número total cresce na ordem  O(b^d), e por conta disso é inviável a busca exaustiva dado ao número absurdo de possibilidades para se chegar no objetivo, por isso que a otimização combinatória é o caminho tomado nesse caso. E esse problema é um dos clássicos da computação dentro do campo de NP-completude, não existe nenhuma forma viável de o resolver em um tempo viável computacionalmente.
 
 ---
 
