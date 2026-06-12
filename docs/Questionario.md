@@ -96,7 +96,8 @@ Discuta:
 * qualidade da política heurística;
 * diferença entre racionalidade e optimalidade.
 
-> **Resposta:** Ele é considerado sim, mas no campo da racionalidade limitada, já que ele não é exatamente limitado no que ele consegue perceber, pois assim como é dito ele consegue observar todas as informações disponíveis para ele, mas dada sua natureza aleatória e de constante esforço de minimizar continuamente o erro, ele é sim racional ao se utilizar de toda informação disponível para chegar no resultado satisfatório, contanto que a solução seja achada, ele para ao invés de procurar exaustivamente a perfeição evitando assim uma explosão combinatória que pode ocorrer.
+> **Resposta:** 
+Ele é considerado sim, mas no campo da racionalidade limitada, já que ele não é exatamente limitado no que ele consegue perceber, pois assim como é dito ele consegue observar todas as informações disponíveis para ele, mas dada sua natureza aleatória e de constante esforço de minimizar continuamente o erro, ele é sim racional ao se utilizar de toda informação disponível para chegar no resultado satisfatório, contanto que a solução seja achada, ele para ao invés de procurar exaustivamente a perfeição evitando assim uma explosão combinatória que pode ocorrer.
 ---
 
 ## 2. Este exercício utiliza IA simbólica, conexionista ou híbrida?
@@ -107,7 +108,9 @@ Explique:
 * quais paradigmas alternativos poderiam resolver o problema;
 * vantagens e limitações de cada abordagem.
 
-> **Resposta:** O paradigma usado é o da IA Simbólica (conhecida como clássica também), que é justificado pelo conhecimento ser explícito por estados claros e as ações são bem definidas para transitar entre os estados. E um paradigma alternativo que poderia ser utilizado é o Conexionista, que trata das redes neurais, que seja por Machine Learning em que ele teria a bagagem de várias cestas diferentes, para que a saíde fosse a cesta já certa, ou por Aprendizado por Reforço, em que ele iria por tentativa e erro ir aprendendo por meio de recompensas ou penalidades. Dentre as vantagens, para o simbólico é a clara parte de auditabilidade e rastreabilidade (XAI), e é eficiente computacionalmente, já a Conexionista permitiria que assim que tudo estivesse treinado, as respostas viriam quase que instantaneamente, até mesmo para grandes bases. No que diz respeito à limitações, a Simbólica viria com a chance de ocorrer uma explosão combinatória, já para o Conexionista, além de um desperdício de recursos para casos pequenos, praticamente não existe auditabilidade.
+> **Resposta:** 
+O paradigma usado é o da IA Simbólica (conhecida como clássica também), que é justificado pelo conhecimento ser explícito por estados claros e as ações são bem definidas para transitar entre os estados. E um paradigma alternativo que poderia ser utilizado é o Conexionista, que trata das redes neurais, que seja por Machine Learning em que ele teria a bagagem de várias cestas diferentes, para que a saíde fosse a cesta já certa, ou por Aprendizado por Reforço, em que ele iria por tentativa e erro ir aprendendo por meio de recompensas ou penalidades. 
+Dentre as vantagens, para o simbólico é a clara parte de auditabilidade e rastreabilidade (XAI), e é eficiente computacionalmente, já a Conexionista permitiria que assim que tudo estivesse treinado, as respostas viriam quase que instantaneamente, até mesmo para grandes bases. No que diz respeito à limitações, a Simbólica viria com a chance de ocorrer uma explosão combinatória, já para o Conexionista, além de um desperdício de recursos para casos pequenos, praticamente não existe auditabilidade.
 
 ---
 
@@ -125,7 +128,9 @@ Discuta especificamente:
 * responsabilidade algorítmica;
 * governança de IA.
 
-> **Resposta:** A XAI é basicamente um conjunto de boas práticas que garantem a transparência e interpretabilidade, aos quais nos permitem ter noção dos caminhos que as IAs passam antes de dar uma saída, em que podemos explicar exatamente o como e o porque do que aconteceu, e é o completo oposto do conceito de um sistema caixa-preta, ao qual não temos como saber de forma alguma todo o processo de 'pensamento', até mesmo as pessoas que o desenvolveram tem uma solução para isso, é o caso para agentes vindos de Machine Learning. É importante para toda esse registro a existência dos logs, pois cada passo do histórico fica salvo e não se perde, ser capaz de rastrezar suas decisões é uma das condições mais importantes para fazermos com que o produto de diversas empresas tenha sua devida responsabilidade ética, sabendo exatamente onde erraram e possam ser devidamente responsabilizadas por isso. O novo marco regulatório com foco na IA vai trazer justamente isso em pauta, para fazer que o desenvolvimento e uso dos agentes seja ético, seguro, e da melhor forma possível ser explicado.
+> **Resposta:** 
+A XAI é basicamente um conjunto de boas práticas que garantem a transparência e interpretabilidade, aos quais nos permitem ter noção dos caminhos que as IAs passam antes de dar uma saída, em que podemos explicar exatamente o como e o porque do que aconteceu, e é o completo oposto do conceito de um sistema caixa-preta, ao qual não temos como saber de forma alguma todo o processo de 'pensamento', até mesmo as pessoas que o desenvolveram tem uma solução para isso, é o caso para agentes vindos de Machine Learning. 
+É importante para toda esse registro a existência dos logs, pois cada passo do histórico fica salvo e não se perde, ser capaz de rastrezar suas decisões é uma das condições mais importantes para fazermos com que o produto de diversas empresas tenha sua devida responsabilidade ética, sabendo exatamente onde erraram e possam ser devidamente responsabilizadas por isso. O novo marco regulatório com foco na IA vai trazer justamente isso em pauta, para fazer que o desenvolvimento e uso dos agentes seja ético, seguro, e da melhor forma possível ser explicado.
 
 ---
 
@@ -140,7 +145,8 @@ Discuta:
 * reprodutibilidade;
 * possíveis lacunas do log atual.
 
-> **Resposta:** Não é o suficiente para ser considera completa por conta de sua natureza aleatória, e sem ter o que gerou salvo de alguma forma, não há como qualquer um que esteja vendo o log reproduzir aquele resultado facilmente, mesmo que ele consiga garantir uma alta observabilidade e rastreabilidade, isso não é um problema por si só, a questão de 'como' chegar no resultado é o que realmente faz decair para uma auditoria algorítima incompleta, por conta dele deixar claro 'o que' aconteceu, mas não 'como'.
+> **Resposta:** 
+Não é o suficiente para ser considera completa por conta de sua natureza aleatória, e sem ter o que gerou salvo de alguma forma, não há como qualquer um que esteja vendo o log reproduzir aquele resultado facilmente, mesmo que ele consiga garantir uma alta observabilidade e rastreabilidade, isso não é um problema por si só, a questão de 'como' chegar no resultado é o que realmente faz decair para uma auditoria algorítima incompleta, por conta dele deixar claro 'o que' aconteceu, mas não 'como'.
 
 ---
 
@@ -155,7 +161,8 @@ Exemplifique cenários onde:
 
 Discuta impactos sobre modelagem, heurística e arquitetura do agente.
 
-> **Resposta:** Para esse tipo de situação, a arquitetura do agente guardaria de alguma forma em memória as informações assim que elas fossem descobertas, para tirar ele do 'escuro' de não saber certas informações, sejam os produtos em si ou os preços, e ele não teria mais certeza dos estados, e sim seriam mais como 'possibilidades'. No que diz respeito à situação de preços mudarem dinamicamente ele precisaria agir rápido para chegar até o final, para a chance do preço se manter de acordo com uma saída satisfatória dele. Em caso de ser não determinístico ele teria que constantemente checar umas 2 vezes ao menos cada ação que ele fizesse, para ter certeza que ocorreu da forma que ele ordenou que fosse. Mas no geral, além de ter que considerar ter que colocar em memória, ele teria que ser também um agente baseado em utilidade, para que qualquer risco ou caminho bom seja realmente colocado em ponderação.
+> **Resposta:** 
+Para esse tipo de situação, a arquitetura do agente guardaria de alguma forma em memória as informações assim que elas fossem descobertas, para tirar ele do 'escuro' de não saber certas informações, sejam os produtos em si ou os preços, e ele não teria mais certeza dos estados, e sim seriam mais como 'possibilidades'. No que diz respeito à situação de preços mudarem dinamicamente ele precisaria agir rápido para chegar até o final, para a chance do preço se manter de acordo com uma saída satisfatória dele. Em caso de ser não determinístico ele teria que constantemente checar umas 2 vezes ao menos cada ação que ele fizesse, para ter certeza que ocorreu da forma que ele ordenou que fosse. Mas no geral, além de ter que considerar ter que colocar em memória, ele teria que ser também um agente baseado em utilidade, para que qualquer risco ou caminho bom seja realmente colocado em ponderação.
 
 ---
 
@@ -170,7 +177,8 @@ Discuta:
 
 Relacione com NP-completude, complexidade computacional e otimização combinatória.
 
-> **Resposta:** A explosão combinatória ocorre por vários motivos em conjunto, o fator da ramificação se dá pelo fato de que o tanto de N possibilidades que ele pode seguir, é o tanto de itens diferentes disponíveis para ele poder fazer alguma ação na cesta, e levando em conta a profundidade que pode levar para alcançar o objetivo (seja por tamanho, ou nesse caso o preço), chegamos em um crescimento exponencial, pois o número total cresce na ordem  O(b^d), e por conta disso é inviável a busca exaustiva dado ao número absurdo de possibilidades para se chegar no objetivo, por isso que a otimização combinatória é o caminho tomado nesse caso. E esse problema é um dos clássicos da computação dentro do campo de NP-completude, não existe nenhuma forma viável de o resolver em um tempo viável computacionalmente.
+> **Resposta:** 
+A explosão combinatória ocorre por vários motivos em conjunto, o fator da ramificação se dá pelo fato de que o tanto de N possibilidades que ele pode seguir, é o tanto de itens diferentes disponíveis para ele poder fazer alguma ação na cesta, e levando em conta a profundidade que pode levar para alcançar o objetivo (seja por tamanho, ou nesse caso o preço), chegamos em um crescimento exponencial, pois o número total cresce na ordem  O(b^d), e por conta disso é inviável a busca exaustiva dado ao número absurdo de possibilidades para se chegar no objetivo, por isso que a otimização combinatória é o caminho tomado nesse caso. E esse problema é um dos clássicos da computação dentro do campo de NP-completude, não existe nenhuma forma viável de o resolver em um tempo viável computacionalmente.
 
 ---
 
@@ -178,7 +186,9 @@ Relacione com NP-completude, complexidade computacional e otimização combinat�
 
 Explique representação do indivíduo, função fitness, crossover, mutação, população e seleção. Discuta quais elementos já estão implicitamente presentes na implementação atual.
 
-> **Resposta:**
+> **Resposta:** 
+A representação do indivíduo funcionaria como o 'DNA' da solução, que neste caso seria a própria estrutura do estado (a configuração atual da cesta com seus itens). A função fitness avaliaria a aptidão dessas cestas, priorizando as que mais se aproximam do objetivo (o orçamento). Com isso, o algoritmo aplicaria a seleção, filtrando a população (que passaria a ser um conjunto de várias cestas simultâneas, e não apenas uma). O crossover misturaria os itens das cestas 'boas' selecionadas para gerar novas combinações. Já a mutação diz respeito a alterações aleatórias em itens para garantir diversidade. 
+Analisando o projeto atual, alguns elementos já estão implicitamente presentes: o estado atual já atua como a representação do indivíduo; a heurística do erro absoluto atua como a função fitness; e, principalmente, as ações de adicionar, remover ou substituir itens de forma aleatória já são, na prática, mecanismos de mutação. Para evoluir plenamente para um algoritmo genético, seria pertinente implementar os elementos de população, seleção e crossover, tornando a busca pelo objetivo ainda mais eficiente
 
 ---
 
@@ -187,7 +197,7 @@ Explique representação do indivíduo, função fitness, crossover, mutação, 
 Discuta possibilidades como reinforcement learning, adaptação heurística, memória de estados, aprendizado de operadores e aprendizado baseado em experiência.
 
 > **Resposta:**
-
+Ele poderia aprender por meio de adaptação heurística, seria uma boa forma porque conforme for tomando certas ações, ele iria em tempo de execução mesmo se adaptar momentaneamente para não cair em adições ou substituições que levariam o estado atual para um caminho sem saída, aprendendo a evitar eles e chegar ao objetivo mais facilmente.
 ---
 
 ## 9. Qual a importância da separação entre ambiente, agente e política de decisão?
