@@ -205,7 +205,7 @@ Ele poderia aprender por meio de adaptação heurística, seria uma boa forma po
 Explique como essa separação favorece modularidade, reutilização, testabilidade, auditabilidade, extensibilidade e simulação experimental.
 
 > **Resposta:**
-
+A importância vem diretamente de como a robustez se constrói, porque essa separação garante a modularidade, e isso permite que percebamos diretamente de onde veio o erro caso ocorra, ou que possamos alterar uma parte sem mexer no todo. E dada a essa separação, caso quiséssemos usar o agente para algum outro contexto similar de alguma forma, isso seria possível, só ajustar a terminologia dos parâmetros, bem como poderiamos usar a modularidade para fazer testes diretos nela. E algo já intrínseco que é aumentado ainda pela separação é a auditabilidade, dado que cada parte, assim como antes citado aqui, vai expressamente mostrar o erro, e da mesma forma seria adicionar alguma especificidade extra em relação à alguma operação. Os testes poderiam se aprofundar mais em diferenças mesmo com os ambientes iguais, trocando por exemplo a parte das regras ou o cérebro.
 ---
 
 ## 10. Este exercício pode ser considerado um sistema de tomada de decisão automatizada?
@@ -213,7 +213,7 @@ Explique como essa separação favorece modularidade, reutilização, testabilid
 Discuta autonomia, critérios de decisão, impacto da heurística, transparência e necessidade de supervisão humana. Relacione com IA responsável, governança algorítmica e regulação de IA.
 
 > **Resposta:**
-
+Pode ser considerado sim, já que assim que ele possui o ambiente e o orçamento em mãos ele já coloca em prática o loop de decisões, sendo autônomo nesse quesito. Ele segue se baseando nos seus critérios que vem com a heurística que foi definida, o problema é só que baseando-se puramente na matemática ele pode usar respostas simples demais e absolutas que resolvem sim o problema, mas são irreais, como comprar 100 pacotes de sal por exemplo, por isso que é necessário a transparência de cada passo para que com a supervisão humana, possamos verificar com exatidão onde, quando e porque a decisão que levou ao erro foi tomada, para garantir a utilidade dos dados. E é desse fator em específico que a regulamentação que garante a IA responsável, feito de forma correta, é tão importantes, porque é preciso muita cautela e cuidado quando tratamos de sistemas que podem simplesmente cometer erros sistêmicos e não termos como verificar para consertar.
 ---
 
 ## 11. Como o Problema da Feira se relaciona com sistemas reais de IA utilizados industrialmente?
