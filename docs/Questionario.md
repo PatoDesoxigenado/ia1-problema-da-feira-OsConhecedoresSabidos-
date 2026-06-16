@@ -240,6 +240,7 @@ Todo esse processo é facilitado porque o projeto utiliza representação simbó
 Discuta emergência, cognição computacional, representação, arquitetura e epistemologia da IA.
 
 > **Resposta:**
+O comportamento emerge da interação que ele faz entre o agente, ambiente, representação e heurística, dado que os elementos isolados que compõe do algoritmo não fazem nada por si, são inertes. É só através de sua arquitetura modular que é permitido que a inteligência emerja de forma controlada, por meio da constante interação que é a cognição computacionalmente falando, agindo por meio de dados do mundo real muito bem representados para o que ele é capaz de "entender". Ele faz a manipulação dos itens que tem acesso, até atingir determinada condição, então o agente não 'sabe' o que faz, no que diz respeito à epistemologia.
 
 ---
 
@@ -248,6 +249,7 @@ Discuta emergência, cognição computacional, representação, arquitetura e ep
 Discuta consumo energético, uso massivo de GPUs, custo de treinamento e inferência, impacto ambiental e escalabilidade global. Relacione com data centers, refrigeração, consumo hídrico e demanda elétrica.
 
 > **Resposta:**
+Porque as LLMs apenas para passarem a existir, necessitam de um treinamento de vários meses com alto gasto energético de milhares de Watts, além de que para se manterem é necessário o uso de várias GPUs e servidores de alto poder de processamento, o que por si só já eleva de forma absurda o custo e até causa uma lacuna para os usuários comuns de hardware de qualquer item que precise de memória, seja ela de longa persistência (HDs/SSDs) ou rápida (RAM/Cache/Registradores). E o uso constante de hardware desse nível gera um calor absurdo, que necessita de um bom nível de refrigeramento que utiliza uma quantidade excessiva de água doce e de energia elétrica para manter eles + os ar-condicionados ligados. Então seria completamente inviável, tanto por questão financeira, quanto por ambiental caso todas as soluções de software tivessem a intenção de usar as LLMs.
 
 ---
 
@@ -256,6 +258,7 @@ Discuta consumo energético, uso massivo de GPUs, custo de treinamento e inferê
 Discuta adequação arquitetural, custo-benefício computacional, complexidade desnecessária, latência, interpretabilidade e auditabilidade. Compare heurística simples, busca clássica, sistemas simbólicos e LLMs.
 
 > **Resposta:**
+Dado a todo o contexto que foi dado, é visível que certos problemas e sistemas não precisam de LLMs para problemas simples, seria uma alta complexidade de arquitetura para realizar algo que uma busca no BD ou alguma operação/função no código resolveria, além de que a latência causada pelo momento de 'thinking' da I.A é inaceitável em casos industriais por exemplo, que tem como aceitável apenas milisegundos de espera, além de que um erro causado por LLMs é inviável de saber onde, o que e porque aconteceu o erro, sendo algo crítico em sistemas modernos que precisam de uma auditabilidade e rastreabilidade para consertos o mais rápido possíveis. Os métodos clássicos além disso são mais eficientes computacionalmente falando, no quesito de custo-benefício computacional, não é algo a ser abandonado apenas porque as LLMs tem uma alta capacidade de resolver problemas, tem que sempre ter em mente o contraponto da complexidade de implementação, o financeiro e o gasto energético, além da sustentabilidade que é um fator crítico.
 
 ---
 
