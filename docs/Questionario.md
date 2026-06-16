@@ -221,6 +221,7 @@ Pode ser considerado sim, já que assim que ele possui o ambiente e o orçamento
 Discuta relações com sistemas de recomendação, otimização logística, planejamento automático, robótica, sistemas multiagente, sistemas de decisão financeira e escalonamento industrial.
 
 > **Resposta:**
+Ele se relaciona diretamente pela semelhança quase que total, só mudando o contexto, porque no sistema de recomendações por exemplo, temos um limite de cartão que as recomendações podem sugerir um combo de produtos que use o todo/quase-todo sem extrapolar, no de logística além de se ter limites físicos, temos limite de peso para preencher com diversos pedidos, na robótica temos X ações para Y de bateria, nos sistemas multiagente as ações sempre impactam o todo para os outros, fazendo com que tenham que rever o viável para a quantidade de itens a pegar, nos sistemas de decisão financeira temos um algoritmo que faz várias buscas e testes para minimizar o risco e maximizar o lucro com base em alguma meta, isso se aplica aos outros da mesma forma. São agentes que agem com um limite X, que está relacionado a um espaço de com N itens com seu determinado valor, ou valores, seja o preço na decisão financeira, a unidade de tempo no planejamento automático, ou o ciclo de máquina no escalonamento industrial.
 
 ---
 
@@ -229,6 +230,8 @@ Discuta relações com sistemas de recomendação, otimização logística, plan
 Explique o que torna um sistema explicável e a diferença entre interpretabilidade, explicabilidade, transparência e rastreabilidade. Discuta como logs, representação simbólica, estados explícitos e ações registradas facilitam XAI.
 
 > **Resposta:**
+Sim, o comportamento do agente é explicável para humanos dada a sua natureza de XAI. Para assimilação dos termos: a transparência é o fato de o sistema ser aberto; a rastreabilidade é a capacidade de seguir todo o percurso de decisões através dos logs; a interpretabilidade é a capacidade de entender todo o sentido mecânico desses passos; e a explicabilidade é conseguir traduzir tudo isso com clareza para um humano.
+Todo esse processo é facilitado porque o projeto utiliza representação simbólica e estados explícitos (sabemos exatamente o que há na cesta, com nomes legíveis). Juntando isso às ações registradas passo a passo, os logs permitem uma clara rastreabilidade, mostrando exatamente onde, quando e por que o erro ocorreu. Isso permite que os humanos vejam a falha e tenham o potencial de corrigi-la com as próprias mãos, garantindo um sistema completamente explicável em todos os seus processos.
 
 ---
 
