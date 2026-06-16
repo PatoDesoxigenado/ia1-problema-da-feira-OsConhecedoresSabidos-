@@ -285,7 +285,9 @@ Na hora de tomar decisões sequenciais sobre quais bancas visitar, o mapa da fei
 Discuta memória, processamento, consumo energético, requisitos de hardware, tempo de execução e complexidade de inferência.
 
 > **Resposta:**
+A diferença de custo computacional entre o agente do "problema da feira" e um modelo de LLM moderno reflete o contraste entre a eficiência de um algoritmo focado e a força bruta, de uma rede neural massiva. No agente da feira, o consumo de memória RAM e os requisitos de hardware são minimalistas (pode ser executado em qualquer computador domestico, ou um sistema embarcado com um Raspberry), pois a estrutura do mapa e as suas regras ocupam poucos MB. O seu processamento, é feito de forma simples e sequencial executando apenas contas matemáticas básicas e comparações lógicas para traçar a rota. Por causa disso, o tempo de execução é praticamente instantâneo (em milissegundos) e o consumo energético é quase nulo, pois o algoritmo calcula o caminho ideal direto, evitando desperdício de energia.
 
+Em contraste a isso, um LLM moderno exige uma infraestrutura gigantesca e de altíssimo custo, baseada em chips especializados (como GPUs ou TPUs). A memória necessária é medida em gigabytes ou terabytes de VRAM (memória da gpu), uma vez que o modelo precisa manter bilhões de parâmetros carregados simultaneamente e gastar memória extra para se lembrar do contexto da conversa. O processamento de um LLM exige bilhões de multiplicações matemáticas paralelas a cada palavra gerada, gerando uma latência perceptível no tempo de resposta. Esse esforço computacional resulta em um consumo energético extremamente elevado, onde uma única pergunta feita a um LLM consome milhares de vezes mais energia do que a busca estruturada e exata realizada pelo agente da feira.
 ---
 
 ## 18. Explique o conceito de "IA apropriada ao problema".
@@ -293,7 +295,9 @@ Discuta memória, processamento, consumo energético, requisitos de hardware, te
 Discuta por que nem toda solução deve utilizar deep learning, por que diferentes problemas exigem diferentes paradigmas e por que engenharia de IA exige escolha arquitetural racional. Relacione com eficiência, sustentabilidade, interpretabilidade e custo operacional.
 
 > **Resposta:**
+O conceito de uma "IA apropriada ao problema" define que um sistema inteligente deve selecionar a técnica computacional mais simples e eficaz para alcançar o objetivo esperado, respeitando restrições de tempo, memória, energia e dados disponíveis. Nesse contexto, o paradigma conexionista (como o deep learning, redes neurais, LLMs) demonstra grande eficácia em cenários complexos onde o próprio computador precisa descobrir padrões ocultos, como exemplo em questões  de reconhecimento facial ou da compreensão de fala. Contudo, essas redes funcionam como uma "caixa-preta" de estatística: exige milhões de dados para treinamento, gera um consumo de energia que causa impactos ambientais e possui baixa interpretação, uma vez que é difícil rastrear como o modelo chegou a uma determinada resposta.
 
+Por outro lado, quando um problema possui regras lógicas claras, restrições bem definidas e dados estruturados (como o mapeamento e os preços abordados no "problema da feira", o paradigma da "ia simbólica" baseado em conhecimento, lógica formal e algoritmos de busca tradicional) resolve a questão de forma exata e quase instantânea. A engenharia de IA opta por algoritmos tradicionais quando o escopo reduz o custo de hardware. Em suma, a maturidade na engenharia de sistemas não se encontra no tamanho ou na complexidade de um modelo, mas sim na sabedoria da escolha do algoritmo correto para o problema certo.
 ---
 
 ## 19. Como sistemas híbridos podem reduzir custo energético em IA?
