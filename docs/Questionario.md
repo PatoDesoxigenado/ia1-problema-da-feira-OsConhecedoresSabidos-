@@ -205,7 +205,7 @@ Ele poderia aprender por meio de adaptação heurística, seria uma boa forma po
 Explique como essa separação favorece modularidade, reutilização, testabilidade, auditabilidade, extensibilidade e simulação experimental.
 
 > **Resposta:**
-
+A importância vem diretamente de como a robustez se constrói, porque essa separação garante a modularidade, e isso permite que percebamos diretamente de onde veio o erro caso ocorra, ou que possamos alterar uma parte sem mexer no todo. E dada a essa separação, caso quiséssemos usar o agente para algum outro contexto similar de alguma forma, isso seria possível, só ajustar a terminologia dos parâmetros, bem como poderiamos usar a modularidade para fazer testes diretos nela. E algo já intrínseco que é aumentado ainda pela separação é a auditabilidade, dado que cada parte, assim como antes citado aqui, vai expressamente mostrar o erro, e da mesma forma seria adicionar alguma especificidade extra em relação à alguma operação. Os testes poderiam se aprofundar mais em diferenças mesmo com os ambientes iguais, trocando por exemplo a parte das regras ou o cérebro.
 ---
 
 ## 10. Este exercício pode ser considerado um sistema de tomada de decisão automatizada?
@@ -213,7 +213,7 @@ Explique como essa separação favorece modularidade, reutilização, testabilid
 Discuta autonomia, critérios de decisão, impacto da heurística, transparência e necessidade de supervisão humana. Relacione com IA responsável, governança algorítmica e regulação de IA.
 
 > **Resposta:**
-
+Pode ser considerado sim, já que assim que ele possui o ambiente e o orçamento em mãos ele já coloca em prática o loop de decisões, sendo autônomo nesse quesito. Ele segue se baseando nos seus critérios que vem com a heurística que foi definida, o problema é só que baseando-se puramente na matemática ele pode usar respostas simples demais e absolutas que resolvem sim o problema, mas são irreais, como comprar 100 pacotes de sal por exemplo, por isso que é necessário a transparência de cada passo para que com a supervisão humana, possamos verificar com exatidão onde, quando e porque a decisão que levou ao erro foi tomada, para garantir a utilidade dos dados. E é desse fator em específico que a regulamentação que garante a IA responsável, feito de forma correta, é tão importantes, porque é preciso muita cautela e cuidado quando tratamos de sistemas que podem simplesmente cometer erros sistêmicos e não termos como verificar para consertar.
 ---
 
 ## 11. Como o Problema da Feira se relaciona com sistemas reais de IA utilizados industrialmente?
@@ -221,6 +221,7 @@ Discuta autonomia, critérios de decisão, impacto da heurística, transparênci
 Discuta relações com sistemas de recomendação, otimização logística, planejamento automático, robótica, sistemas multiagente, sistemas de decisão financeira e escalonamento industrial.
 
 > **Resposta:**
+Ele se relaciona diretamente pela semelhança quase que total, só mudando o contexto, porque no sistema de recomendações por exemplo, temos um limite de cartão que as recomendações podem sugerir um combo de produtos que use o todo/quase-todo sem extrapolar, no de logística além de se ter limites físicos, temos limite de peso para preencher com diversos pedidos, na robótica temos X ações para Y de bateria, nos sistemas multiagente as ações sempre impactam o todo para os outros, fazendo com que tenham que rever o viável para a quantidade de itens a pegar, nos sistemas de decisão financeira temos um algoritmo que faz várias buscas e testes para minimizar o risco e maximizar o lucro com base em alguma meta, isso se aplica aos outros da mesma forma. São agentes que agem com um limite X, que está relacionado a um espaço de com N itens com seu determinado valor, ou valores, seja o preço na decisão financeira, a unidade de tempo no planejamento automático, ou o ciclo de máquina no escalonamento industrial.
 
 ---
 
@@ -229,6 +230,8 @@ Discuta relações com sistemas de recomendação, otimização logística, plan
 Explique o que torna um sistema explicável e a diferença entre interpretabilidade, explicabilidade, transparência e rastreabilidade. Discuta como logs, representação simbólica, estados explícitos e ações registradas facilitam XAI.
 
 > **Resposta:**
+Sim, o comportamento do agente é explicável para humanos dada a sua natureza de XAI. Para assimilação dos termos: a transparência é o fato de o sistema ser aberto; a rastreabilidade é a capacidade de seguir todo o percurso de decisões através dos logs; a interpretabilidade é a capacidade de entender todo o sentido mecânico desses passos; e a explicabilidade é conseguir traduzir tudo isso com clareza para um humano.
+Todo esse processo é facilitado porque o projeto utiliza representação simbólica e estados explícitos (sabemos exatamente o que há na cesta, com nomes legíveis). Juntando isso às ações registradas passo a passo, os logs permitem uma clara rastreabilidade, mostrando exatamente onde, quando e por que o erro ocorreu. Isso permite que os humanos vejam a falha e tenham o potencial de corrigi-la com as próprias mãos, garantindo um sistema completamente explicável em todos os seus processos.
 
 ---
 
@@ -237,6 +240,7 @@ Explique o que torna um sistema explicável e a diferença entre interpretabilid
 Discuta emergência, cognição computacional, representação, arquitetura e epistemologia da IA.
 
 > **Resposta:**
+O comportamento emerge da interação que ele faz entre o agente, ambiente, representação e heurística, dado que os elementos isolados que compõe do algoritmo não fazem nada por si, são inertes. É só através de sua arquitetura modular que é permitido que a inteligência emerja de forma controlada, por meio da constante interação que é a cognição computacionalmente falando, agindo por meio de dados do mundo real muito bem representados para o que ele é capaz de "entender". Ele faz a manipulação dos itens que tem acesso, até atingir determinada condição, então o agente não 'sabe' o que faz, no que diz respeito à epistemologia.
 
 ---
 
@@ -245,6 +249,7 @@ Discuta emergência, cognição computacional, representação, arquitetura e ep
 Discuta consumo energético, uso massivo de GPUs, custo de treinamento e inferência, impacto ambiental e escalabilidade global. Relacione com data centers, refrigeração, consumo hídrico e demanda elétrica.
 
 > **Resposta:**
+Porque as LLMs apenas para passarem a existir, necessitam de um treinamento de vários meses com alto gasto energético de milhares de Watts, além de que para se manterem é necessário o uso de várias GPUs e servidores de alto poder de processamento, o que por si só já eleva de forma absurda o custo e até causa uma lacuna para os usuários comuns de hardware de qualquer item que precise de memória, seja ela de longa persistência (HDs/SSDs) ou rápida (RAM/Cache/Registradores). E o uso constante de hardware desse nível gera um calor absurdo, que necessita de um bom nível de refrigeramento que utiliza uma quantidade excessiva de água doce e de energia elétrica para manter eles + os ar-condicionados ligados. Então seria completamente inviável, tanto por questão financeira, quanto por ambiental caso todas as soluções de software tivessem a intenção de usar as LLMs.
 
 ---
 
@@ -253,6 +258,7 @@ Discuta consumo energético, uso massivo de GPUs, custo de treinamento e inferê
 Discuta adequação arquitetural, custo-benefício computacional, complexidade desnecessária, latência, interpretabilidade e auditabilidade. Compare heurística simples, busca clássica, sistemas simbólicos e LLMs.
 
 > **Resposta:**
+Dado a todo o contexto que foi dado, é visível que certos problemas e sistemas não precisam de LLMs para problemas simples, seria uma alta complexidade de arquitetura para realizar algo que uma busca no BD ou alguma operação/função no código resolveria, além de que a latência causada pelo momento de 'thinking' da I.A é inaceitável em casos industriais por exemplo, que tem como aceitável apenas milisegundos de espera, além de que um erro causado por LLMs é inviável de saber onde, o que e porque aconteceu o erro, sendo algo crítico em sistemas modernos que precisam de uma auditabilidade e rastreabilidade para consertos o mais rápido possíveis. Os métodos clássicos além disso são mais eficientes computacionalmente falando, no quesito de custo-benefício computacional, não é algo a ser abandonado apenas porque as LLMs tem uma alta capacidade de resolver problemas, tem que sempre ter em mente o contraponto da complexidade de implementação, o financeiro e o gasto energético, além da sustentabilidade que é um fator crítico.
 
 ---
 
@@ -282,7 +288,9 @@ Na hora de tomar decisões sequenciais sobre quais bancas visitar, o mapa da fei
 Discuta memória, processamento, consumo energético, requisitos de hardware, tempo de execução e complexidade de inferência.
 
 > **Resposta:**
+A diferença de custo computacional entre o agente do "problema da feira" e um modelo de LLM moderno reflete o contraste entre a eficiência de um algoritmo focado e a força bruta, de uma rede neural massiva. No agente da feira, o consumo de memória RAM e os requisitos de hardware são minimalistas (pode ser executado em qualquer computador domestico, ou um sistema embarcado com um Raspberry), pois a estrutura do mapa e as suas regras ocupam poucos MB. O seu processamento, é feito de forma simples e sequencial executando apenas contas matemáticas básicas e comparações lógicas para traçar a rota. Por causa disso, o tempo de execução é praticamente instantâneo (em milissegundos) e o consumo energético é quase nulo, pois o algoritmo calcula o caminho ideal direto, evitando desperdício de energia.
 
+Em contraste a isso, um LLM moderno exige uma infraestrutura gigantesca e de altíssimo custo, baseada em chips especializados (como GPUs ou TPUs). A memória necessária é medida em gigabytes ou terabytes de VRAM (memória da gpu), uma vez que o modelo precisa manter bilhões de parâmetros carregados simultaneamente e gastar memória extra para se lembrar do contexto da conversa. O processamento de um LLM exige bilhões de multiplicações matemáticas paralelas a cada palavra gerada, gerando uma latência perceptível no tempo de resposta. Esse esforço computacional resulta em um consumo energético extremamente elevado, onde uma única pergunta feita a um LLM consome milhares de vezes mais energia do que a busca estruturada e exata realizada pelo agente da feira.
 ---
 
 ## 18. Explique o conceito de "IA apropriada ao problema".
@@ -290,7 +298,9 @@ Discuta memória, processamento, consumo energético, requisitos de hardware, te
 Discuta por que nem toda solução deve utilizar deep learning, por que diferentes problemas exigem diferentes paradigmas e por que engenharia de IA exige escolha arquitetural racional. Relacione com eficiência, sustentabilidade, interpretabilidade e custo operacional.
 
 > **Resposta:**
+O conceito de uma "IA apropriada ao problema" define que um sistema inteligente deve selecionar a técnica computacional mais simples e eficaz para alcançar o objetivo esperado, respeitando restrições de tempo, memória, energia e dados disponíveis. Nesse contexto, o paradigma conexionista (como o deep learning, redes neurais, LLMs) demonstra grande eficácia em cenários complexos onde o próprio computador precisa descobrir padrões ocultos, como exemplo em questões  de reconhecimento facial ou da compreensão de fala. Contudo, essas redes funcionam como uma "caixa-preta" de estatística: exige milhões de dados para treinamento, gera um consumo de energia que causa impactos ambientais e possui baixa interpretação, uma vez que é difícil rastrear como o modelo chegou a uma determinada resposta.
 
+Por outro lado, quando um problema possui regras lógicas claras, restrições bem definidas e dados estruturados (como o mapeamento e os preços abordados no "problema da feira"), o paradigma da "ia simbólica" baseado em conhecimento resolve a questão de forma exata e quase instantânea. A engenharia de IA opta por algoritmos tradicionais quando o escopo reduz o custo de hardware. Em suma, a maturidade na engenharia de sistemas não se encontra no tamanho ou na complexidade de um modelo, mas sim na sabedoria da escolha do algoritmo correto para o problema certo.
 ---
 
 ## 19. Como sistemas híbridos podem reduzir custo energético em IA?
