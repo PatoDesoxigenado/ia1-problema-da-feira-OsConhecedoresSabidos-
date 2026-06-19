@@ -65,6 +65,34 @@ def calcular_heuristica(total, orcamento):
     """
     return abs(orcamento - total)
 
+def adicionar_item(estado, item):
+    """
+    Retorna um novo estado (candidato) com +1 unidade do item escolhido.
+    """
+    novo_estado = estado.copy()
+    novo_estado[item] += 1
+    return novo_estado
+
+def remover_item(estado, item):
+    """
+    Retorna um novo estado (candidato) com -1 unidade do item escolhido.
+    Garante que a quantidade não fique negativa.
+    """
+    novo_estado = estado.copy()
+    if novo_estado[item] > 0:
+        novo_estado[item] -= 1
+    return novo_estado
+
+def substituir_item(estado, item_sai, item_entra):
+    """
+    Retorna um novo estado (candidato) removendo 1 unidade do 'item_sai' 
+    (se possível) e adicionando 1 unidade do 'item_entra'.
+    """
+    novo_estado = estado.copy()
+    if novo_estado[item_sai] > 0:
+        novo_estado[item_sai] -= 1
+        novo_estado[item_entra] += 1
+    return novo_estado
 # ============================================================
 # Agente Alice
 # ============================================================
