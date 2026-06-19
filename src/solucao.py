@@ -58,6 +58,13 @@ def calcular_total(estado, itens):
         total += quantidade * itens[item]
     return total
 
+def calcular_heuristica(total, orcamento):
+    """
+    Calcula o erro absoluto h(s) da cesta atual.
+    Quanto mais próximo de 0, melhor é o estado.
+    """
+    return abs(orcamento - total)
+
 # ============================================================
 # Agente Alice
 # ============================================================
