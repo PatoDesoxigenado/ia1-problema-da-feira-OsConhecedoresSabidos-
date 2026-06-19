@@ -44,6 +44,19 @@ Resultado = namedtuple(
     ]
 )
 
+# ============================================================
+# Funções Auxiliares (Operadores e Cálculos)
+# ============================================================
+
+def calcular_total(estado, itens):
+    """
+    Calcula o valor total da cesta somando a (quantidade * preço) 
+    de cada item presente no estado.
+    """
+    total = 0.0
+    for item, quantidade in estado.items():
+        total += quantidade * itens[item]
+    return total
 
 # ============================================================
 # Agente Alice
