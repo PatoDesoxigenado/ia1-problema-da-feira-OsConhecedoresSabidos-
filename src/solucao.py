@@ -186,6 +186,71 @@ def agente_alice(
         if erro == 0.0:
             break
 
+        #
+        # Geração de candidatos
+        #
+
+        lista_itens = list(itens.keys())
+        operador = random.choice(["adicionar", "remover", "substituir"])
+
+        if operador == "adicionar":
+            item = random.choice(lista_itens)
+            candidato = adicionar_item(estado, item)
+            acao = f"adicionar {item}"
+
+        elif operador == "remover":
+            itens_possiveis = [i for i in lista_itens if estado[i] > 0]
+            if not itens_possiveis:
+                entradas_log.append(
+                    f"[{i}] remover (impossivel)"
+                    f" | TOTAL={total:.2f}"
+                    f" | ERRO={erro:.2f}"
+                )
+                continue
+            item = random.choice(itens_possiveis)
+            candidato = remover_item(estado, item)
+            acao = f"remover {item}"
+
+        elif operador == "substituir":
+            itens_possiveis = [i for i in lista_itens if estado[i] > 0]
+            if not itens_possiveis:
+                entradas_log.append(
+                    f"[{i}] substituir (impossivel)"
+                    f" | TOTAL={total:.2f}"
+                    f" | ERRO={erro:.2f}"
+                )
+                continue
+            item_sai = random.choice(itens_possiveis)
+            item_entra = random.choice([i for i in lista_itens if i != item_sai])
+            candidato = substituir_item(estado, item_sai, item_entra)
+            acao = f"substituir {item_sai} por {item_entra}"
+
+        #
+        # Avaliação do candidato
+        #
+
+        total_candidato = calcular_total(candidato, itens)
+        erro_candidato = calcular_heuristica(total_candidato, orcamento)
+
+        #
+        # Política de aceitação (melhoria estrita)
+        #
+
+        if erro_candidato < erro:
+            estado = candidato
+            total = total_candidato
+            erro = erro_candidato
+
+        #
+        # Registro de trajetória (XAI) — a cada iteração
+        #
+
+        entradas_log.append(
+            f"[{i}] {acao}"
+            f" | TOTAL={total:.2f}"
+            f" | ERRO={erro:.2f}"
+        )
+
     #
     # Determinar status
     #
