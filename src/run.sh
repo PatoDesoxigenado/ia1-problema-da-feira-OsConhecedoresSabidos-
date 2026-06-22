@@ -21,12 +21,19 @@ echo "[Exemplo 2]"
 python3 main.py "$CSV" 25.00 10000 4
 
 echo
+echo "[Gerando logs para o Gráfico de Comparação de Seeds]"
+echo "Mesmo orçamento (30.00), mesmas iterações, seeds distintas..."
+python3 main.py "$CSV" 30.00 2000 42
+python3 main.py "$CSV" 30.00 2000 100
+python3 main.py "$CSV" 30.00 2000 2026
+
+echo
 echo "=================================================="
 echo "Iniciando Automação de Experimentos em Massa"
 echo "=================================================="
 echo "Executando o script de métricas quantitativas..."
 
-# Chama o seu script Python que faz os loops de todas as combinações
+# Chama o script Python que faz os loops de todas as combinações
 python3 experimento.py
 
 echo
