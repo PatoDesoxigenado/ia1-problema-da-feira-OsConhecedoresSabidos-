@@ -182,7 +182,6 @@ def grafico_convergencia(logs, saida: Path):
         zorder=3,
     )
 
-    # Destaca o ponto final (solução encontrada)
     ax.scatter(
         dados["iteracoes"][-1],
         dados["erros"][-1],
@@ -192,7 +191,6 @@ def grafico_convergencia(logs, saida: Path):
         label=f"Solução  h(s) = {dados['erros'][-1]:.2f}",
     )
 
-    # [CORRIGIDO] Título identifica explicitamente o orçamento e a seed da execução
     ax.set_title(
         f"Convergência de h(s) ao longo das iterações\n"
         f"(orçamento = R$ {dados['orcamento']:.2f} — seed = {dados['seed']})"
@@ -396,7 +394,6 @@ def grafico_taxa_otimas(linhas_csv, saida: Path):
             zorder=3,
         )
 
-        # Anotação do valor percentual no topo de cada barra
         for barra, taxa in zip(barras, taxas):
             ax.text(
                 barra.get_x() + barra.get_width() / 2,
