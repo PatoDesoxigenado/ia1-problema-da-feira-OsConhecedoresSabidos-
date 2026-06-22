@@ -3,71 +3,41 @@
 #
 # Problema da Feira
 #
-# Script de execução experimental.
-#
-# Realiza múltiplas execuções do agente Alice
-# utilizando diferentes parâmetros:
-#
-# - orçamento
-# - limite de iterações
-# - seed
-#
-# Objetivos pedagógicos:
-#
-# - observar comportamento estocástico;
-# - comparar execuções;
-# - analisar convergência;
-# - discutir qualidade heurística;
-# - introduzir experimentação computacional.
+# Script de execução experimental e automação de métricas.
 #
 
 CSV="data/feira.csv"
 
 echo "=================================================="
-echo "Problema da Feira - Execuções Experimentais"
+echo "Problema da Feira - Execuções Demonstrativas"
 echo "=================================================="
 
 echo
-echo "[1]"
-python3 main.py "$CSV" 20.00 50 1
-
-echo
-echo "[2]"
+echo "[Exemplo 1]"
 python3 main.py "$CSV" 20.00 500 2
 
 echo
-echo "[3]"
-python3 main.py "$CSV" 20.00 1000 3
-
-echo
-echo "[4]"
+echo "[Exemplo 2]"
 python3 main.py "$CSV" 25.00 10000 4
 
 echo
-echo "[5]"
-python3 main.py "$CSV" 10.00 10000 5
+echo "=================================================="
+echo "Iniciando Automação de Experimentos em Massa"
+echo "=================================================="
+echo "Executando o script de métricas quantitativas..."
 
-echo
-echo "[6]"
-python3 main.py "$CSV" 50.00 20000 6
-
-echo
-echo "[7]"
-python3 main.py "$CSV" 7.35 15000 7
-
-echo
-echo "[8]"
-python3 main.py "$CSV" 13.70 12000 8
-
-echo
-echo "[9]"
-python3 main.py "$CSV" 99.99 50000 9
-
-echo
-echo "[10]"
-python3 main.py "$CSV" 20.00 100000 42
+# Chama o seu script Python que faz os loops de todas as combinações
+python3 experimento.py
 
 echo
 echo "=================================================="
-echo "Fim das execuções"
+echo "Gerando Gráficos Estatísticos"
+echo "=================================================="
+
+# Deixa engatado para rodar a parte da Thafine logo em seguida
+python3 visualizacao.py
+
+echo
+echo "=================================================="
+echo "Fim do pipeline de execução. Dados e gráficos salvos!"
 echo "=================================================="

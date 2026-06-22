@@ -5,22 +5,6 @@
 Problema da Feira
 
 Este módulo implementa o agente Alice.
-
-O agente:
-
-- percebe o ambiente;
-- conhece os itens disponíveis;
-- conhece os preços;
-- possui um objetivo;
-- executa ações;
-- busca minimizar erro heurístico.
-
-Inicialmente o agente não possui
-comportamento inteligente.
-
-A inteligência emerge conforme
-os operadores heurísticos e mecanismos
-de busca são implementados.
 """
 
 from collections import namedtuple
@@ -93,6 +77,7 @@ def substituir_item(estado, item_sai, item_entra):
         novo_estado[item_sai] -= 1
         novo_estado[item_entra] += 1
     return novo_estado
+
 # ============================================================
 # Agente Alice
 # ============================================================
@@ -104,84 +89,27 @@ def agente_alice(
 ):
     """
     Agente heurístico estocástico.
-
-    O ambiente contém:
-
-    ambiente = {
-        "itens": {
-            item -> preco
-        },
-        "orcamento": valor
-    }
     """
-
-    #
-    # Inicialização do gerador pseudoaleatório
-    #
 
     if seed is not None:
         random.seed(seed)
 
-    #
     # Percepção do ambiente
-    #
-
     itens = ambiente["itens"]
     orcamento = ambiente["orcamento"]
+    lista_itens = list(itens.keys())
 
-    #
-    # Estado inicial do agente
-    #
+    # Estado inicial do agente (cesta vazia)
+    estado = {item: 0 for item in lista_itens}
 
-    estado = {
-        item: 0
-        for item in itens.keys()
-    }
-
-    #
     # Variáveis da busca
-    #
-
-    total = 0.0
-    erro = orcamento
+    total = calcular_total(estado, itens)
+    erro = calcular_heuristica(total, orcamento)
     iteracoes = 0
     entradas_log = []
 
-    #
-    # O agente inicia sem conhecimento útil.
-    #
-    # O comportamento inteligente emerge
-    # conforme os operadores heurísticos
-    # são implementados.
-    #
-    # TODO:
-    #
-    # implementar:
-    #
-    # - operadores de ação
-    # - geração de candidatos
-    # - heurística
-    # - melhoria iterativa
-    #
-    # Para registrar cada ação no log, adicione
-    # entradas à lista entradas_log durante a busca.
-    #
-    # Exemplo:
-    #
-    #   entradas_log.append(
-    #       f"[{i}] adicionar Melancia"
-    #       f" | TOTAL={total:.2f}"
-    #       f" | ERRO={erro:.2f}"
-    #   )
-    #
-
     for i in range(1, max_iter + 1):
-
         iteracoes = i
-
-        #
-        # Critério de parada
-        #
 
         if erro == 0.0:
             break
