@@ -66,12 +66,14 @@ Na nossa implementação, o problema da feira estrutura-se como um grafo implíc
 - Nós: Eles representam cada estado único da cesta, iniciando no nó raiz com todos os itens da cesta zerados.
 - Arestas: A conexão entre os nós ocorre quando uma ação é executada, assim alterando o estado da cesta, como por exemplo sair do nó raiz estando como: N = {Laranja : 0}, e ao passar por uma ação Adicionar (Laranja), ele ficaria: N = {Laranja : 1}
 - Caminhos: É a sequência de nós visitados e de ações tomadas. No nosso modelo, o caminho equivale à trajetória de logs gerada pelo agente até encontrar o objetivo.
-Exemplo de Caminho: Um trajeto curto seria s0 -(Adicionar[Melancia])>s1-(Adicionar[Manga])>s2-(Remover[Melancia])>s3.
+Exemplo de Caminho: Um trajeto curto seria s0 -(Adicionar[Melancia])> s1-(Adicionar[Manga])> s2-(Remover[Melancia])> s3.
 ---
 
 ## 4. Busca Não Informada
 
- Discuta BFS, DFS e a explosão combinatória do espaço de estados deste problema. Argumente por que busca exaustiva é inviável. 
+ Discuta BFS, DFS e a explosão combinatória do espaço de estados deste problema. Argumente por que busca exaustiva é inviável.
+
+No contexto do Problema da Feira, algoritmos de busca não informada são extremamente ineficientes. Por não possuir um limite físico rígido predefinido, expandir os nós de forma sistemática sem nenhuma função de revisar isso, como ocorre em uma Busca em Largura ou Profundidade, resultaria em uma explosão combinatória. O agente esgotaria os recursos computacionais testando alocações de forma totalmente aleatória antes de sequer encontrar um valor que encontrasse uma combinação satisfatória.
 
 ---
 
