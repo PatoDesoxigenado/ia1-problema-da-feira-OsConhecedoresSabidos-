@@ -237,13 +237,23 @@ A influência da estocasticidade no tempo de resposta do sistema torna-se eviden
 
  Relacione a implementação com os conceitos teóricos estudados.
  Discuta as limitações do agente, compare com outras abordagens
- de IA e reflita sobre racionalidade, heurística e emergência. 
+ de IA e reflita sobre racionalidade, heurística e emergência.
+
+A implementação do Problema da Feira serve como um estudo de caso fundamental sobre a escolha da "IA apropriada". Atualmente, existe uma forte inclinação para tentar resolver qualquer desafio aplicando Modelos Fundacionais, Redes Neurais Profundas ou LLMs. Entretanto, para cenários industriais de planejamento automático, otimização e alocação de recursos, a IA Simbólica/Clássica demonstra uma superioridade técnica esmagadora por três motivos críticos:
+- Sustentabilidade Computacional: Treinar e realizar inferência em LLMs requer o uso massivo de GPUs de alto custo e um consumo energético exorbitante. O nosso agente de busca heurística opera em uma representação simbólica extremamente leve e calcula resultados em milissegundos utilizando apenas a CPU, o que o torna apto para ser embarcado em dispositivos de baixa potência (Edge Computing).
+- Exatidão Matemática: LLMs operam por aproximação estatística de padrões textuais, gerando o risco constante de alucinação algorítmica. Em problemas de otimização estrita e restrição de orçamento (como a mochila ou o empacotamento logístico), "achismos" probabilísticos são inaceitáveis. A busca heurística, ancorada na lógica e na avaliação explícita do estado (h(s)), garante integridade matemática nos cálculos sem violar regras do negócio.
+- Auditabilidade e XAI: Modelos profundos são notoriamente "caixas-pretas" (suas decisões derivam da multiplicação em matrizes de milhões de parâmetros opacos). O nosso agente possui rastreabilidade total de suas decisões: cada transição (como adicionar a Maçã ou substituir a Banana) deixa uma trilha explícita no arquivo de log. Essa capacidade de reconstrução histórica da decisão é essencial para a Inteligência Artificial Explicável (XAI) e para o cumprimento de futuros marcos regulatórios, garantindo responsabilização algorítmica em sistemas críticos.   
+Portanto, o projeto reafirma a lição vital da epistemologia da IA: a inteligência não emerge unicamente da ingestão de bilhões de dados em uma rede neural, mas da engenharia sofisticada que abstrai o mundo físico de forma útil, utilizando a representação correta e a inferência adequada.
 
 ---
 
 ## 10. Conclusão
 
  Sintetize os resultados, os principais aprendizados, as dificuldades encontradas e as possíveis extensões do projeto. 
+
+A implementação computacional e a análise visual do Problema da Feira evidenciaram, na prática, os limites da busca exaustiva e a importância de representações adequadas do conhecimento. Ficou claro que resolver problemas em Inteligência Artificial não se resume a testar todas as possibilidades, mas sim a adotar estratégias heurísticas que priorizam eficiência, mesmo com possível perda de perfeição.   
+A principal dificuldade do projeto esteve na fase inicial de modelagem e compreensão do problema, especialmente na tradução do enunciado para uma representação computacional coerente. Definir quais variáveis considerar e como abstrair elementos do mundo real foi mais desafiador do que a própria implementação, reforçando a importância da modelagem conceitual em IA.   
+Conclui-se que a Inteligência Artificial atua principalmente como uma ferramenta de modelagem da realidade, onde diferentes abordagens são mais adequadas a diferentes tipos de problema. Como extensões, o projeto pode evoluir para o uso de algoritmos evolutivos, como genéticos, além da inclusão de mecanismos de memória para aprendizado entre execuções.
 
 ---
 
