@@ -2,11 +2,15 @@
 
 ---
 
-> **Grupo:** <!-- Nome do grupo -->
+> **Grupo:** OsConhecedoresSabidos
 >
-> **Integrantes:** <!-- Nomes dos integrantes -->
+> **Integrantes:**
+| Ana Kelry Fernandes Cabral do Nascimento | 
+| Luiz Fernando Santos Teixeira | 
+| Thafine Jennifer Viana Siqueira | 
+| Alerrandro de Moura Martins |
 >
-> **Repositório:** <!-- URL do repositório privado -->
+> **Repositório:** [URL do repositório privado](https://github.com/PatoDesoxigenado/ia1-problema-da-feira-OsConhecedoresSabidos-) 
 >
 > **Data de entrega:** 22 de junho de 2026
 
