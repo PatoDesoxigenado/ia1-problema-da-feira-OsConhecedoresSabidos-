@@ -394,7 +394,31 @@ Total(Cesta, 20.00)
 Discuta representação simbólica, inferência lógica, verificabilidade e interpretabilidade.
 
 > **Resposta:**
+No "problema da feira", as entidades fixas do domínio são mapeadas como constantes ou objetos, incluindo o próprio agente, denominado pelas regras do sistema como alice, a estrutura de armazenamento representada como cesta, as mercadorias disponíveis no ambiente, a exemplo de banana, melancia e laranja, além dos valores numéricos que quantificam as grandezas financeiras e de contagem. As propriedades características desses objetos e as conexões estabelecidas entre eles ao longo do tempo são descritas por predicados e relações lógicas estruturadas. A tabela de preços do ambiente é representada de forma imutável pelo predicado Preco(x, p), indicando que o produto genérico possui o valor unitário. O estado interno do agente é monitorado dinamicamente pela relação Quantidade(c, x, q), que associa uma cesta específica a uma determinada contagem do item avaliado, enquanto o acúmulo financeiro corrente e o teto monetário imposto pelo ambiente são validados respectivamente pelas funções lógicas Total(c, v) e Orcamento(b).
 
+Dentro dessa definição formal, um estado do sistema configura-se como uma conjunção de predicados fundamentados. O estado inicial do problema caracteriza-se pelo cenário em que o predicado de orçamento encontra-se definido com o valor alvo do experimento, a cesta de compras inicia com todas as quantidades zeradas para os produtos conhecidos e o predicado de valor acumulado assume o patamar inicial nulo. O estado objetivo, que representa o critério de sucesso para a interrupção do laço de busca, é definido formalmente pela existência de um valor acumulado na cesta que seja logicamente igual ao limite estipulado pelo predicado de orçamento. As transições entre esses estados ocorrem pela aplicação de esquemas de ações que funcionam como operadores lógicos associados a pré-condições e efeitos rígidos. O operador de inserção, por exemplo, exige como pré-condição que o item possua um preço válido e que a cesta possua estados correntes de quantidade e totalização; seu efeito lógico imediato consiste em remover a validade das asserções anteriores e injetar no sistema os novos predicados atualizados com o incremento unitário na contagem e a soma do preço do produto ao valor total.
+
+Essa modelagem de tomada de decisão pode ser transposta diretamente para uma linguagem de programação lógica baseada em regras de inferência, como o Prolog. Nesse paradigma, as características do ambiente e as escolhas do agente são descritas através de fatos e cláusulas de Horn que determinam a dinâmica do sistema, como ilustrado na estrutura a seguir:
+
+Prolog
+
+preco(banana, 0.05).
+preco(melancia, 3.00).
+orcamento(20.00).
+
+possui(alice, banana, 10).
+possui(alice, melancia, 3).
+
+total_cesta(Agente, Total) :- 
+    findall(Valor, (possui(Agente, Item, Qtd), preco(Item, P), Valor is Qtd * P), ListaValores),
+    sum_list(ListaValores, Total).
+
+objetivo_atingido(Agente) :-
+    total_cesta(Agente, Total),
+    orcamento(Orcamento),
+    Total =:= Orcamento.
+
+Nesse contexto, inferência lógica permite que o sistema deduza estados complexos e valide a integridade financeira da cesta a partir de axiomas matemáticos elementares, operando de forma puramente racional. Por consequência, o sistema ganha propriedades totais que verifica e interpreta, uma vez que provadores de teoremas conseguem auditar cada passo executado pelo agente, demonstrando matematicamente que a sequência de ações obedeceu às restrições do ambiente. Não há caminhos ocultos ou probabilidades implícitas na validação do estado; a justificativa para o sucesso ou falha da meta baseia-se em um encadeamento lógico claro e compreensível.
 ---
 
 ## 27. Explique por que a representação simbólica continua relevante em IA moderna.
@@ -402,6 +426,7 @@ Discuta representação simbólica, inferência lógica, verificabilidade e inte
 Discuta aplicações que exigem rastreabilidade, explicabilidade, representação explícita, inferência lógica e auditabilidade. Relacione com sistemas especialistas, ontologias, planejamento e sistemas críticos.
 
 > **Resposta:**
+Apesar do amplo domínio contemporâneo dos modelos baseados em Deep Learning, modelos LLms ainda operam como caixas-pretas indutivas de alta dimensionalidade que, embora eficientes no reconhecimento de padrões complexos, sofrem de limitações inerentes, como a falta de rastreabilidade de suas decisões, ocorrência de alucinações de fatos e a total incapacidade de garantir que restrições críticas de segurança não sejam violadas. Por essa razão, a abordagem simbólica é insubstituível em aplicações corporativas e industriais que exigem estrita auditabilidade e governança de dados. Nesses sitemas, o comportamento não pode depender de aproximações estatísticas ocultas. A modelagem através de lógica simbólica garante que o conhecimento do domínio seja mapeado de forma explícita. Na engenharia de software e nos sistemas especialistas de planejamento moderno, a representação explícita de símbolos permite simular sequências lógicas e verificar a integridade física ou jurídica de processos complexos antes de sua execução real.
 
 ---
 
