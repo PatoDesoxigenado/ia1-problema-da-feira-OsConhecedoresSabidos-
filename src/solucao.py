@@ -5,6 +5,22 @@
 Problema da Feira
 
 Este módulo implementa o agente Alice.
+
+O agente:
+
+- percebe o ambiente;
+- conhece os itens disponíveis;
+- conhece os preços;
+- possui um objetivo;
+- executa ações;
+- busca minimizar erro heurístico.
+
+Inicialmente o agente não possui
+comportamento inteligente.
+
+A inteligência emerge conforme
+os operadores heurísticos e mecanismos
+de busca são implementados.
 """
 
 from collections import namedtuple
@@ -77,7 +93,6 @@ def substituir_item(estado, item_sai, item_entra):
         novo_estado[item_sai] -= 1
         novo_estado[item_entra] += 1
     return novo_estado
-
 # ============================================================
 # Agente Alice
 # ============================================================
@@ -89,66 +104,166 @@ def agente_alice(
 ):
     """
     Agente heurístico estocástico.
+
+    O ambiente contém:
+
+    ambiente = {
+        "itens": {
+            item -> preco
+        },
+        "orcamento": valor
+    }
     """
+
+    #
+    # Inicialização do gerador pseudoaleatório
+    #
 
     if seed is not None:
         random.seed(seed)
 
+    #
     # Percepção do ambiente
+    #
+
     itens = ambiente["itens"]
     orcamento = ambiente["orcamento"]
-    lista_itens = list(itens.keys())
 
-    # Estado inicial do agente (cesta vazia)
-    estado = {item: 0 for item in lista_itens}
+    #
+    # Estado inicial do agente
+    #
 
+    estado = {
+        item: 0
+        for item in itens.keys()
+    }
+
+    #
     # Variáveis da busca
-    total = calcular_total(estado, itens)
-    erro = calcular_heuristica(total, orcamento)
+    #
+
+    total = 0.0
+    erro = orcamento
     iteracoes = 0
     entradas_log = []
 
+    #
+    # O agente inicia sem conhecimento útil.
+    #
+    # O comportamento inteligente emerge
+    # conforme os operadores heurísticos
+    # são implementados.
+    #
+    # TODO:
+    #
+    # implementar:
+    #
+    # - operadores de ação
+    # - geração de candidatos
+    # - heurística
+    # - melhoria iterativa
+    #
+    # Para registrar cada ação no log, adicione
+    # entradas à lista entradas_log durante a busca.
+    #
+    # Exemplo:
+    #
+    #   entradas_log.append(
+    #       f"[{i}] adicionar Melancia"
+    #       f" | TOTAL={total:.2f}"
+    #       f" | ERRO={erro:.2f}"
+    #   )
+    #
+
     for i in range(1, max_iter + 1):
+
         iteracoes = i
+
+        #
+        # Critério de parada
+        #
 
         if erro == 0.0:
             break
 
-        # 1. Sorteia uma ação/operador aleatório
-        operador = random.choice(["adicionar", "remover", "substituir"])
-        item_sorteado = random.choice(lista_itens)
-        
-        # 2. Gera o estado candidato baseado no operador escolhido
-        if operador == "adicionar":
-            candidato = adicionar_item(estado, item_sorteado)
-            descricao_acao = f"adicionar {item_sorteado}"
-        elif operador == "remover":
-            candidato = remover_item(estado, item_sorteado)
-            descricao_acao = f"remover {item_sorteado}"
-        else: # substituir
-            item_saida = random.choice(lista_itens)
-            candidato = substituir_item(estado, item_saida, item_sorteado)
-            descricao_acao = f"substituir {item_saida} por {item_sorteado}"
+        #
+        # Geração de candidatos
+        #
 
-        # 3. Avalia o candidato
+        lista_itens = list(itens.keys())
+        operador = random.choice(["adicionar", "remover", "substituir"])
+
+        if operador == "adicionar":
+            item = random.choice(lista_itens)
+            candidato = adicionar_item(estado, item)
+            acao = f"adicionar {item}"
+
+        elif operador == "remover":
+            itens_possiveis = [i for i in lista_itens if estado[i] > 0]
+            if not itens_possiveis:
+                entradas_log.append(
+                    f"[{i}] remover (impossivel)"
+                    f" | TOTAL={total:.2f}"
+                    f" | ERRO={erro:.2f}"
+                )
+                continue
+            item = random.choice(itens_possiveis)
+            candidato = remover_item(estado, item)
+            acao = f"remover {item}"
+
+        elif operador == "substituir":
+            itens_possiveis = [i for i in lista_itens if estado[i] > 0]
+            if not itens_possiveis:
+                entradas_log.append(
+                    f"[{i}] substituir (impossivel)"
+                    f" | TOTAL={total:.2f}"
+                    f" | ERRO={erro:.2f}"
+                )
+                continue
+            item_sai = random.choice(itens_possiveis)
+            item_entra = random.choice([i for i in lista_itens if i != item_sai])
+            candidato = substituir_item(estado, item_sai, item_entra)
+            acao = f"substituir {item_sai} por {item_entra}"
+
+        #
+        # Avaliação do candidato
+        #
+
         total_candidato = calcular_total(candidato, itens)
         erro_candidato = calcular_heuristica(total_candidato, orcamento)
 
-        # 4. Política de aceitação (só aceita se melhorar ou mantiver o erro se for válido)
+        #
+        # Política de aceitação (melhoria estrita)
+        #
+
         if erro_candidato < erro:
             estado = candidato
             total = total_candidato
             erro = erro_candidato
-            
-            # Registrar a trajetória no log para auditoria de XAI exigida pelo professor
-            entradas_log.append(
-                f"[{i}] {descricao_acao}"
-                f" | TOTAL={total:.2f}"
-                f" | ERRO={erro:.2f}"
-            )
 
-    # Determinar status final
-    status = "OTIMA" if erro == 0.0 else "APROXIMADA"
+        #
+        # Registro de trajetória (XAI) — a cada iteração
+        #
+
+        entradas_log.append(
+            f"[{i}] {acao}"
+            f" | TOTAL={total:.2f}"
+            f" | ERRO={erro:.2f}"
+        )
+
+    #
+    # Determinar status
+    #
+
+    status = (
+        "OTIMA"
+        if erro == 0.0
+        else "APROXIMADA"
+    )
+
+    #
+    # Resultado final do agente
+    #
 
     return Resultado(
         estado=estado,
