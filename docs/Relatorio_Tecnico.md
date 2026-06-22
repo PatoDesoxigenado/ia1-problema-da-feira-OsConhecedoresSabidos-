@@ -45,7 +45,16 @@
 
 ## 2. Modelagem Formal
 
- Defina formalmente: ambiente, estado, ações, espaço de estados, objetivo e heurística. Use a notação apresentada na contextualização. 
+ Defina formalmente: ambiente, estado, ações, espaço de estados, objetivo e heurística. Use a notação apresentada na contextualização.
+ 
+ O Problema da Feira pode ser formalmente modelado como um problema de busca em espaço de estados, onde os componentes são definidos da seguinte maneira:
+ - Ambiente: É estático e determinístico, composto por um dicionário de preços de catálogo P (onde P_Laranja = 0.50, P_Banana = 0.05, etc.) e um limite de Orçamento O definido na execução.
+ - Estados: Representação a configuração do momento na cesta de Alice. Se baseia na quantidade de variáveis que ela possui disponível. N = {Laranja : q1, Banana : q2, Melancia : q3, Melão : q4, Manga : q5}
+ - Ações: É basicamente o conjunto de operadores que altera de alguma forma o estado atual. Pode se classificar como adicionar, que incrementa a quantidade de algum item na cesta, o remover que decrementa a quantidade de algum item na cesta e temos o substituir que, respectivamente, remove e adiciona algum item.
+ - Espaço de Estados: Seria tecnicamente a junção de todas as possibilidades possíveis de combinação na cesta, que teoricamente é infinito, mas computacionalmente falando ele se limita às interações
+ 
+ O objetivo desse agente é buscar um estado que tenha resultado satisfatório em relação a ser idêntico/o mais próximo possível do orçamento.
+ Heurística: h(s) = | Orçamento - Total(itens)|
 
 ---
 
@@ -53,6 +62,11 @@
 
  Explique como o problema se estrutura como grafo implícito: nós, arestas, caminhos e transições. Inclua exemplos concretos com os itens de data/feira.csv. 
 
+Na nossa implementação, o problema da feira estrutura-se como um grafo implícito. Isso significa que os nós e caminhos não são instanciados todos de uma vez na memória; eles são gerados dinamicamente sob demanda sempre que um operador de ação é acionado.
+- Nós: Eles representam cada estado único da cesta, iniciando no nó raiz com todos os itens da cesta zerados.
+- Arestas: A conexão entre os nós ocorre quando uma ação é executada, assim alterando o estado da cesta, como por exemplo sair do nó raiz estando como: N = {Laranja : 0}, e ao passar por uma ação Adicionar (Laranja), ele ficaria: N = {Laranja : 1}
+- Caminhos: É a sequência de nós visitados e de ações tomadas. No nosso modelo, o caminho equivale à trajetória de logs gerada pelo agente até encontrar o objetivo.
+Exemplo de Caminho: Um trajeto curto seria s0 -(Adicionar[Melancia])>s1-(Adicionar[Manga])>s2-(Remover[Melancia])>s3.
 ---
 
 ## 4. Busca Não Informada
